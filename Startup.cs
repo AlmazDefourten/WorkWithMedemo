@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -35,7 +36,6 @@ namespace WebApplication2
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
@@ -46,12 +46,30 @@ namespace WebApplication2
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
+            app.Run(async (context) =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                var response = context.Response;
+                var request = context.Request;
+                if (request.Path == "/api/user")
+                {
+                    var responseText = "Некорректные данные";   // содержание сообщения по умолчанию
+
+                    if (request.HasJsonContentType())
+                    {
+                        var person = await request.ReadFromJsonAsync<Person>();
+                        if (person != null)
+                            responseText = $"Name: {person.Name}  LastName: {person.LastName}";
+                    }
+                    await response.WriteAsJsonAsync(new { text = responseText });
+                }
+                else
+                {
+                    response.ContentType = "text/html; charset=utf-8";
+                    await response.SendFileAsync("Views/index.html");
+                }
             });
+
         }
+        public record Person(string Name, int LastName);
     }
 }
