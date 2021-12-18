@@ -4,6 +4,7 @@
     <meta charset="utf-8">
   <title></title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <title></title>
 </head>
 <body style="text-align:center;" id="body">
     <form>
@@ -12,21 +13,6 @@
         <button onclick="sendJSON()">Проверить JSON</button>
     </form>
     <div id='message'></div> <!--Результат-->
-  </p>
-  <script>
-    async function sendJSON(e) {
-    e.preventDefault();
-    const response = await fetch("/api/user", {
-        method: "POST",
-        headers: { "Accept": "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify({
-            name: document.getElementById("name").value,
-            lastname: document.getElementById("lastname").value
-        })
-    });
-    const message = await response.json();
-    document.getElementById("message").innerText = message.text;
-    }
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
