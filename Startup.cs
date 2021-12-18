@@ -70,6 +70,6 @@ namespace WebApplication2
             });
 
         }
-        public record Person(string Name, int LastName);
+        public record Person(string Name, string LastName);
     }
 }
