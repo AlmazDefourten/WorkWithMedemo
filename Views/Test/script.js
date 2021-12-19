@@ -10,4 +10,4 @@ async function sendJSON(e) {
     });
     const message = await response.json();
     document.getElementById("message").innerText = message.text;
-    }
+}
