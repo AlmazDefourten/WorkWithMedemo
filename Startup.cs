@@ -45,34 +45,34 @@ namespace WebApplication2
             app.UseRouting();
 
             app.UseAuthorization();
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllerRoute(
-            //        name: "default",
-            //        pattern: "{controller=Home}/{action=Index}/{id?}");
-            //});
-            app.Run(async (context) =>
+            app.UseEndpoints(endpoints =>
             {
-                var response = context.Response;
-                var request = context.Request;
-                if (request.Path == "/api/user")
-                {
-                    var responseText = "Некорректные данные";   // содержание сообщения по умолчанию
-
-                    if (request.HasJsonContentType())
-                    {
-                        var person = await request.ReadFromJsonAsync<Person>();
-                        if (person != null)
-                            responseText = $"Name: {person.Name}  LastName: {person.LastName}";
-                    }
-                    await response.WriteAsJsonAsync(new { text = responseText });
-                }
-                else
-                {
-                    response.ContentType = "text/html; charset=utf-8";
-                    await response.SendFileAsync("Views/index.html");
-                }
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+            //app.Run(async (context) =>
+            //{
+            //    var response = context.Response;
+            //    var request = context.Request;
+            //    if (request.Path == "/api/user")
+            //    {
+            //        var responseText = "Некорректные данные";   // содержание сообщения по умолчанию
+
+            //        if (request.HasJsonContentType())
+            //        {
+            //            var person = await request.ReadFromJsonAsync<Person>();
+            //            if (person != null)
+            //                responseText = $"Name: {person.Name}  LastName: {person.LastName}";
+            //        }
+            //        await response.WriteAsJsonAsync(new { text = responseText });
+            //    }
+            //    else
+            //    {
+            //        response.ContentType = "text/html; charset=utf-8";
+            //        await response.SendFileAsync("Views/index.html");
+            //    }
+            //});
 
         }
         public record Person(string Name, string LastName);
