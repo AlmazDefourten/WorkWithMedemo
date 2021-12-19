@@ -13,7 +13,7 @@ namespace WebApplication2.Controllers
     {
         public record Person(string Name, string LastName);
         private readonly ILogger<HomeController> _logger;
-
+        Person _person;
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -23,9 +23,13 @@ namespace WebApplication2.Controllers
             return View();
         }
         [HttpPost]
-        public JsonResult GetUser()
+        public IActionResult Index(JsonResult res)
         {
-            Person person = new Person("Alevtina", "MaturKizlar");
+            return View();
+        }
+        [HttpPost]
+        public JsonResult GetUser([FromBody] Person person)
+        {
             string responseText = $"Name: {person.Name}  LastName: {person.LastName}";
             return Json(new { text = responseText });
         }
