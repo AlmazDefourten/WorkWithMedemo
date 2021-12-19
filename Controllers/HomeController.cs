@@ -26,7 +26,8 @@ namespace WebApplication2.Controllers
         public JsonResult GetUser()
         {
             Person person = new Person("Alevtina", "MaturKizlar");
-            return Json(person);
+            string responseText = $"Name: {person.Name}  LastName: {person.LastName}";
+            return Json(new { text = responseText });
         }
 
         public IActionResult Privacy()
