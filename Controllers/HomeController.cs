@@ -11,16 +11,22 @@ namespace WebApplication2.Controllers
 {
     public class HomeController : Controller
     {
+        public record Person(string Name, string LastName);
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
             return View();
+        }
+        [HttpPost]
+        public JsonResult GetUser()
+        {
+            Person person = new Person("Alevtina", "MaturKizlar");
+            return Json(person);
         }
 
         public IActionResult Privacy()
