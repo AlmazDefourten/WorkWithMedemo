@@ -1,7 +1,7 @@
 document.getElementById("sendBtn").addEventListener("click", sendJSON);
 async function sendJSON(e) {
     e.preventDefault();
-    const response = await fetch("/api/user", {
+    const response = await fetch("/home/getuser", {
         method: "POST",
         headers: { "Accept": "application/json", "Content-Type": "application/json" },
         body: JSON.stringify({
