@@ -37,7 +37,7 @@ namespace WebApplication2.Controllers
                 user.Nick = "D410";
                 db.Users.Add(user);
                 db.SaveChanges();
-                User? userHard = db.Users.FirstOrDefault(u => u.Name == "almaz");
+                User? userHard = db.Users.FirstOrDefault(u => u.Name == user.Name);
                 string responseText = "null";
                 if (userHard != null)
                     responseText = $"Name: {userHard.Name} LastName: {userHard.LastName}";
