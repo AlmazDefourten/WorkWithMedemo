@@ -1,5 +1,11 @@
 {
   "Version": 1,
-  "ProjectMap": {},
-  "NextColorIndex": 0
+  "ProjectMap": {
+    "6f09f0fe-40ed-40b6-9294-003327f9441b": {
+      "ProjectGuid": "6f09f0fe-40ed-40b6-9294-003327f9441b",
+      "DisplayName": "WorkWithMe",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
 }

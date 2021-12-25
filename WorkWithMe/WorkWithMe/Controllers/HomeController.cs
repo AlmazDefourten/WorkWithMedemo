@@ -28,10 +28,21 @@ namespace WebApplication2.Controllers
             return View();
         }
         [HttpPost]
-        public JsonResult GetUser([FromBody] Person person)
+        public JsonResult GetUser([FromBody] User user)
         {
-            string responseText = $"Name: {person.Name} LastName: {person.LastName}";
-            return Json(new { text = responseText });
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                user.Password = "123";
+                user.Email = "alaaa";
+                user.Nick = "D410";
+                db.Users.Add(user);
+                db.SaveChanges();
+                User? userHard = db.Users.FirstOrDefault(u => u.Name == "almaz");
+                string responseText = "null";
+                if (userHard != null)
+                    responseText = $"Name: {userHard.Name} LastName: {userHard.LastName}";
+                return Json(new { text = responseText });
+            }
         }
 
         public IActionResult Privacy()

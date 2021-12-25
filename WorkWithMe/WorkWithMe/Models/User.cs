@@ -1,30 +1,43 @@
-﻿namespace WorkWithMe.Models
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+
+namespace WorkWithMe.Models
 {
     public class User
     {
-        public string Nick;
-        public string? Name;
-        public string? LastName;
+        [Key] 
+        public int Id { get; set; }
+        public string Nick { get; set; }
+        public string? Name { get; set; }
+        public string? LastName { get; set; }
 
-        public string Password; // Для логина используется email
+        public string Password { get; set; } // Для логина используется email
 
-        public string Email;
-        public bool isEmailShowing;
+        public string Email { get; set; }
+        public bool isEmailShowing { get; set; }
 
-        public string? PhoneNumber;
-        public bool? isNumberShowing;
+        public string? PhoneNumber { get; set; }
+        public bool? isNumberShowing { get; set; }
 
-        public string? Country;
-        public string? City;
+        public string? Country { get; set; }
+        public string? City { get; set; }
 
-        public DateTime? DateOfBirth;
+        public DateTime? DateOfBirth { get; set; }
 
-        public bool? isMale;
+        public bool? isMale { get; set; }
 
         // Ссылки на соцсети
-        public string? VKLink;
-        public string? TelegramNick;
+        public string? VKLink { get; set; }
+        public string? TelegramNick { get; set; }
 
-        Dictionary<int, string>? Tags;
+        Dictionary<int, string>? Tags { get; set; }
+
+        public User(string Nick, string Password, string Email)
+        {
+            this.Nick = Nick;
+            this.Password = Password;
+            this.Email = Email;
+        }
+        public User() { }
     }
 }
