@@ -23,3 +23,4 @@ C:\Users\Алмаз\projects\WorkWithMe\WorkWithMe\obj\Debug\net6.0\WorkWithMe.d
 C:\Users\Алмаз\projects\WorkWithMe\WorkWithMe\obj\Debug\net6.0\ref\WorkWithMe.dll
 C:\Users\Алмаз\projects\WorkWithMe\WorkWithMe\obj\Debug\net6.0\WorkWithMe.pdb
 C:\Users\Алмаз\projects\WorkWithMe\WorkWithMe\obj\Debug\net6.0\WorkWithMe.genruntimeconfig.cache
+C:\Users\Алмаз\projects\WorkWithMe\WorkWithMe\obj\Debug\net6.0\WorkWithMe.csproj.AssemblyReference.cache
