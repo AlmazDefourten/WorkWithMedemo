@@ -9,6 +9,15 @@ async function sendJSON(e) {
             lastname: document.getElementById("lastname").value
         })
     });
-    const message = await response.json();
-    document.getElementById("message").innerText = message.text;
+    const message = (await response.json())["text"];
+    let parsedMessage = JSON.parse(message);
+    let name = parsedMessage["Name"];
+    let id = parsedMessage["Id"];
+    let lastName = parsedMessage["LastName"];
+
+    document.getElementById("message").innerText = "Name: " +
+        name +
+        " LastName: " +
+        lastName +
+        " Id: " + id;
 }
