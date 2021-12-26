@@ -6,6 +6,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using WorkWithMe.Models;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace WebApplication2.Controllers
 {
@@ -40,7 +42,7 @@ namespace WebApplication2.Controllers
                 User? userHard = db.Users.FirstOrDefault(u => u.Name == user.Name);
                 string responseText = "null";
                 if (userHard != null)
-                    responseText = $"Name: {userHard.Name} LastName: {userHard.LastName}";
+                    responseText = JsonSerializer.Serialize(user);//$"Name: {userHard.Name} LastName: {userHard.LastName}";
                 return Json(new { text = responseText });
             }
         }
