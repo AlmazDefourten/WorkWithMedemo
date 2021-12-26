@@ -32,7 +32,7 @@ namespace WebApplication2.Controllers
         {
             using (ApplicationContext db = new ApplicationContext())
             {
-                user.Password = "123";
+                user.Password = "123"; // 3 строки - это хардкод
                 user.Email = "alaaa";
                 user.Nick = "D410";
                 db.Users.Add(user);
