@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vvgkegd4XMFGgmLDLV+S5RuiVz+PEwDi/p6uJ8b4V1+KptbfFFv+8f3TDgJ/izHRvHxehKVrfWRg1SaCSC8hWQ==",
+  "dgSpecHash": "tRaU874Dcc7HGkdS7fzlU/9n7yoOxQW189uz/6dmIWG+R9rw0lSorCcy7kNZUAlEcBQk0UMI4mYnF+iJrw3jEQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Алмаз\\projects\\WorkWithMe\\WorkWithMe\\WorkWithMe.csproj",
   "expectedPackageFiles": [
@@ -30,8 +30,10 @@
     "C:\\Users\\Алмаз\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Алмаз\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Алмаз\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Алмаз\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
     "C:\\Users\\Алмаз\\.nuget\\packages\\npgsql\\6.0.2\\npgsql.6.0.2.nupkg.sha512",
     "C:\\Users\\Алмаз\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\6.0.2\\npgsql.entityframeworkcore.postgresql.6.0.2.nupkg.sha512",
+    "C:\\Users\\Алмаз\\.nuget\\packages\\nunit\\3.13.2\\nunit.3.13.2.nupkg.sha512",
     "C:\\Users\\Алмаз\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Алмаз\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\Алмаз\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
