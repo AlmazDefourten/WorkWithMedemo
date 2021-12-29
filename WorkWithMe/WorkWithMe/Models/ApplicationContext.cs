@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
+
 namespace WorkWithMe.Models
 {
     public class ApplicationContext : DbContext
