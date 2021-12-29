@@ -7,3 +7,8 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
+
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
