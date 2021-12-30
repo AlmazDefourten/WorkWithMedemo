@@ -16,7 +16,16 @@ namespace WorkWithMe.Services.Users
                 return db.Users.AsNoTracking().ToList();
             }
         }
-        
+
+        public User GetUser(int id)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                return db.Users.AsNoTracking().FirstOrDefault(u => u.Id == id);
+            }
+        }
+
+        // CRUD operations
         public async Task AddNewUserAsync(User user)
         {
             using (ApplicationContext db = new ApplicationContext())
@@ -33,5 +42,15 @@ namespace WorkWithMe.Services.Users
                 await db.SaveChangesAsync();
             }
         }
+
+        public async Task EditUserAsync(User user)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                db.Users.Update(user);
+                await db.SaveChangesAsync();
+            }
+        }
+        // END of CRUD operations
     }
 }

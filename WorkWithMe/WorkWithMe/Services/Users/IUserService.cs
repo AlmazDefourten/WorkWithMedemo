@@ -11,6 +11,12 @@ namespace WorkWithMe.Services.Users
         /// Возвращает всех пользователей, отслеживание экземпляров не ведется
         /// </summary>
         public List<User> GetAllUsers();
+        /// <summary>
+        /// Геттер для юзера по первичному ключу
+        /// </summary>
+        /// <param name="id">Ключ для поиска пользователя</param>
+        /// <returns>Возвращает экземпляр найденного пользователя без отслеживания</returns>
+        public User GetUser(int id);
         public Task AddNewUserAsync(User user);
         public Task DeleteUserAsync(User user);
     }
