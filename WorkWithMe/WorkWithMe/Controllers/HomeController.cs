@@ -47,6 +47,21 @@ namespace WebApplication2.Controllers
             }
         }
 
+        public List<User> GetUsers()
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                string responseText = "null";
+                List<User> users = new List<User>();
+                foreach (var user in db.Users.Where(u => true))
+                {
+                    responseText += JsonSerializer.Serialize(user);
+                    users.Add(user);
+                }
+                return users;
+            }
+        }
+
         public IActionResult Privacy()
         {
             return View();
