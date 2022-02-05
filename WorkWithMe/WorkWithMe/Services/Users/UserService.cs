@@ -16,7 +16,8 @@ namespace WorkWithMe.Services.Users
                 return db.Users.AsNoTracking().ToList();
             }
         }
-
+        /// \brief Родительский класс, не несущий никакой смысловой нагрузки
+        /// Геттер юзера
         public User GetUser(int id)
         {
             using (ApplicationContext db = new ApplicationContext())

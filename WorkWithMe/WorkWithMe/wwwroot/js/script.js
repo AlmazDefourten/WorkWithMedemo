@@ -5,20 +5,22 @@ async function sendJSON(e) {
         method: "POST",
         headers: { "Accept": "application/json", "Content-Type": "application/json" },
         body: JSON.stringify({
-            name: document.getElementById("name").value,
-            lastname: document.getElementById("lastname").value
+            nick: document.getElementById("nick").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value
         })
     });
     const message = (await response.json())["text"];
     let parsedMessage = JSON.parse(message);
-    let name = parsedMessage["Name"];
+    let nick = parsedMessage["Nick"];
     let id = parsedMessage["Id"];
-    let lastName = parsedMessage["LastName"];
+    let email = parsedMessage["Email"];
 
-    document.getElementById("message").innerText = "Name: " +
-        name +
-        " LastName: " +
-        lastName +
+
+    document.getElementById("message").innerText = "Nick: " +
+        nick +
+        " Email: " +
+        email +
         " Id: " + id;
 }
 document.getElementById("sendBtn").addEventListener("click", getUsers);
@@ -42,13 +44,13 @@ function row(user) {
     const tr = document.createElement("tr");
     tr.setAttribute("data-rowid", user.id);
 
-    const nameTd = document.createElement("td");
-    nameTd.append(user.name);
-    tr.append(nameTd);
+    const nickTd = document.createElement("td");
+    nickTd.append(user.nick);
+    tr.append(nickTd);
 
-    const ageTd = document.createElement("td");
-    ageTd.append(user.id);
-    tr.append(ageTd);
+    const idTd = document.createElement("td");
+    idTd.append(user.id);
+    tr.append(idTd);
 
     const linksTd = document.createElement("td");
 
