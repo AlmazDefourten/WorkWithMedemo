@@ -46,6 +46,7 @@ namespace WebApplication2.Controllers
 
         public List<User> GetUsers()
         {
+            
             using (ApplicationContext db = new ApplicationContext())
             {
                 string responseText = "null";
